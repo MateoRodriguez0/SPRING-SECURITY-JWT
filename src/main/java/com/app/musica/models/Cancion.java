@@ -5,6 +5,7 @@ import java.sql.Timestamp;
 import java.util.List;
 
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,13 +28,15 @@ public class Cancion {
 	}
 
 
+	private Long id;
 	
-	@NotEmpty(message = "")
+	@NotEmpty(message = "El campo titulo no puede estar vacio")
 	private String titulo;
 	
-	@NotEmpty(message = "")
+	@NotEmpty(message = "El campo genero no puede estar vacio")
 	private String genero;
 	
+	@NotNull(message = "El campo duracion no puede estar vacio")
     private Time duracion;
    
 	private Timestamp estreno;
