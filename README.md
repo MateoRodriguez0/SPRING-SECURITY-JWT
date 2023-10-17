@@ -59,7 +59,7 @@ Si el inicio de session es exitoso deberi devolver en la respuesta el JSON Web T
 ```http
   POST /musicapp/auth/singup
 ```
-#### Body para Sin Up Oyente
+#### Body para Sing Up Oyente
 ```javascript
     {
         "nombre":"oyente3",
@@ -69,7 +69,7 @@ Si el inicio de session es exitoso deberi devolver en la respuesta el JSON Web T
     }
 ```
 
-#### Body para Sin Up Artista
+#### Body para Sing Up Artista
 ```javascript
     {
         "nombre":"Artis3",
