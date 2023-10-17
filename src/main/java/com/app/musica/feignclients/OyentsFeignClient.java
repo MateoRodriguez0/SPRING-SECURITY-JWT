@@ -20,7 +20,7 @@ public interface OyentsFeignClient {
 	
 	
 	/**
-	 * busca el listado de canciones favoritas de el usuario asociado a la variable del path {id}.
+	 * Busca el listado de canciones favoritas de el usuario asociado a la variable del path {id}.
 	 * utiliza el metodo oyenteServices.getFavoritas(id) de la clase de servicio para buscar el oyente en la base de datos,
 	 * y devuelve la lista de favoritas del usuario.   
 	 * 

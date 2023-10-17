@@ -23,7 +23,14 @@ import com.app.musica.repositories.OyentesRepository;
 import com.app.musica.security.userdetails.User;
 import com.app.musica.services.JwtServices;
 import com.app.musica.services.userServices;
-
+/**
+ * Esta clase implementa la interfaz userServices que provee los metodos 
+ * que realizan algunas tareas necesarias para la seguridad de la aplicacion.
+ * 
+ * 
+ * @Author Mateo Rodriguez c.
+ * 17 oct. 2023 2:43:22 p. m.
+ */
 @Service
 @Primary
 public class userServicesImpl implements userServices{
@@ -31,13 +38,22 @@ public class userServicesImpl implements userServices{
 	@Override
 	public AuthenticationResponse login(AuthenticationRequest authenticationRequest) {
 		
+		// obtenemos el username del authenticationRequest
 		String username=authenticationRequest.getUsername();
+		// obtenemos el password del authenticationRequest
 		String password= authenticationRequest.getPassword();
 		
-		UsernamePasswordAuthenticationToken authenticationToken= new UsernamePasswordAuthenticationToken(username, password);
+		// creamos un UsernamePasswordAuthenticationToken con los datos del authenticationRequest
+		UsernamePasswordAuthenticationToken authenticationToken= 
+				new UsernamePasswordAuthenticationToken(username, password);
 		
+		// autnticamos el el authentiacationManager de SpringSecurity 
 		authenticationManager.authenticate(authenticationToken);
 		
+		/**
+		 * si el autenticacionmanager es corecto realiza las demas lineas, 
+		 * de lo contrario devuelve un UsernameNotFoundException("El usuario no existe")	
+		 */
 		
 		Optional<Oyente>oyente =oyentesRepository.findByEmail(username);
 		Optional<Artista> artista = artistasRepository.findByEmail(username);
@@ -65,9 +81,15 @@ public class userServicesImpl implements userServices{
 	public Map<String, Object> generateExtraClaims(UserDetails userDetails) {
 	
 		Map<String, Object> extraClaims=new HashMap<>();
-		extraClaims.put("username",userDetails.getUsername());;
-		extraClaims.put("role",userDetails.getAuthorities().stream().map(g -> g.getAuthority()).findFirst().get());
 		
+		extraClaims.put("username",userDetails.getUsername());;
+		
+		extraClaims.put("role",userDetails.getAuthorities()
+				.stream()
+				.map(g -> g.getAuthority())
+				.findFirst()
+				.get());
+				
 		return extraClaims;
 	}
 

@@ -12,6 +12,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Clase de modelo que representa a los usuarios de tipo artistas en la aplicacion.
+ * Esta mapeada a la entidad artistas y tiene una relacion de muchos a unos con la entidad roles.
+ * 
+ * @Author Mateo Rodriguez c.
+ * 17 oct. 2023 2:40:15 p. m.
+ */
 @Entity
 @Table(name = "artistas")
 @Data

@@ -14,6 +14,13 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 
+/**
+ * Clase de sericio que implementa la interfaz JwtServices y provee 
+ * los metodos necesarios para crear y validar los JWT de autenticacion.
+ * 
+ * @Author Mateo Rodriguez c.
+ * 17 oct. 2023 4:12:37 p. m.
+ */
 @Service
 public class jwtServiceimpl implements JwtServices{
 

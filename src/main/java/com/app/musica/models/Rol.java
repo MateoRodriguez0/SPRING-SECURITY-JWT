@@ -9,6 +9,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
 
+/**
+ * clase de modelo que representa el rol o la autoridad de un usuario.
+ * 
+ * @Author Mateo Rodriguez c.
+ * 17 oct. 2023 2:33:46 p. m.
+ */
 @Data
 @Entity
 @Table(name = "roles")

@@ -22,7 +22,7 @@ import com.app.musica.repositories.ArtistasRepository;
 import jakarta.validation.Valid;
 
 /**
- * controlador de las peticiones que seran protegidas y solo seran autorizadas a los usuarios artistas.
+ * controlador de las peticiones que seran protegidas y solo seran permitidas a la autoridad OYENTE.
  * 
  * @Author Mateo Rodriguez c.
  * 13 oct. 2023 7:42:43 a. m.
@@ -32,11 +32,12 @@ import jakarta.validation.Valid;
 public class ArtistasController {
 
 	/**
+	 *  Utiliza un artistFeignClient2 para publicar una cancion por el artista autenticado.
 	 * 
-	 * @param cancion objeto que representa la cancion que sera publicada en la app
-	 * @param bindingResult contiene informacion sobre la validacion del requestBody de la peticion
-	 * @param authentication es el objeto que contiene la informacion del usuario authenticado
-	 * @return devuelve una descripcion de la respuesta a la solicitud
+	 * @param cancion objeto que representa la cancion que sera publicada en la app.
+	 * @param bindingResult contiene informacion sobre la validacion del requestBody de la peticion.
+	 * @param authentication es el objeto que contiene la informacion del usuario authenticado.
+	 * @return devuelve una descripcion de la respuesta a la solicitud.
 	 */
 	@PostMapping(value = "/mysongs/new")
 	public ResponseEntity<?> saveSong(@Valid @RequestBody Cancion cancion, BindingResult bindingResult, 
@@ -60,10 +61,11 @@ public class ArtistasController {
 	}
 	
 	/**
+	 *  Utiliza un artistFeignClient2 para actualizar una cancion.
 	 * 
-	 * @param cancion objeto que representa la cancion que se quiere actualizar
-	 * @param bindingResult contiene informacion sobre la validacion del requestBody de la peticion
-	 * @param authentication es el objeto que contiene la informacion del usuario authenticado
+	 * @param cancion objeto que representa la cancion que se quiere actualizar.
+	 * @param bindingResult contiene informacion sobre la validacion del requestBody de la peticion.
+	 * @param authentication es el objeto que contiene la informacion del usuario authenticado.
 	 * @return si la solicitud es enviada correctamente devuelve la cancion actualizada. 
 	 */
 	@PutMapping(value = "/mysongs/update")
@@ -92,10 +94,11 @@ public class ArtistasController {
 	}
 	
 	/**
+	 * Utiliza un artistFeignClient2 para eliminar una cancion publicada por el artista autenticado.
 	 * 
-	 * @param idCancion id de la cancion que se desea eliminar de la app
-	 * @param authentication es el objeto que contiene la informacion del usuario authenticado
-	 * @return devuelve un responseEntity que contiene una descripcion del resutlado de la peticion
+	 * @param idCancion id de la cancion que se desea eliminar de la app.
+	 * @param authentication es el objeto que contiene la informacion del usuario authenticado.
+	 * @return devuelve un responseEntity que contiene una descripcion del resutlado de la peticion.
 	 */
 	@DeleteMapping(value = "/mysongs/delete/{idCancion}")
 	public ResponseEntity<?> deleteSong(@PathVariable(name = "idCancion") Long idCancion, Authentication authentication){

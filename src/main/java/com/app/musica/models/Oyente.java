@@ -13,6 +13,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Clase de modelo que represeanta a un usuario de tipo oyente.
+ * Esta clase esta mapeada a la entidad oyentes en la abse de datos 
+ * y tiene una relacion de muchos a uno con la entidad rol;
+ * 
+ * @Author Mateo Rodriguez c.
+ * 17 oct. 2023 2:34:44 p. m.
+ */
 @Entity
 @Table(name = "oyentes")
 @Data

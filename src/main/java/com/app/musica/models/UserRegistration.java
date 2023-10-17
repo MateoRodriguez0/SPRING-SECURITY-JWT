@@ -12,16 +12,26 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * Clase de modelo que representa a un usuario que quiere registrase en la aplicacion.
+ * Utiliza la validacion de jakarta para verificar que los datos sean validos.
+ * 
+ * @Author Mateo Rodriguez c.
+ * 17 oct. 2023 2:46:19 p. m.
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserRegistration {
 
 
+	
 	@NotEmpty(message = "el nombre no puede estar vacio")
 	private String nombre;
 
-	
+	/**
+	 * es el nombre artistico de los artistas, solo es necesario cuando el idRol del UserRegistration sea igual a 2.
+	 */
 	private String nombreArtistico; 
 	
 	@Email(message = "el campo email no es valido ")

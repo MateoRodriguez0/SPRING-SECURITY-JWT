@@ -10,6 +10,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * 
+ *Clase de modelo que representa una cancion en la aplicacion.
+ *No se encuentra mapeado a la base de datos debido a que en este proyecto no se hace operaciones con esta entidad. 
+ * @Author Mateo Rodriguez c.
+ * 17 oct. 2023 2:37:10 p. m.
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

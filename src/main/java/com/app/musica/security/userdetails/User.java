@@ -12,6 +12,13 @@ import com.app.musica.models.Oyente;
 
 import lombok.AllArgsConstructor;
 
+/***
+ * Clase de servicio que representa el userDetails del usuario autenticado.
+ * Esta clase tiene dos propiedades un Artista y un Oyente para reducir los userDetails en este proyecto.
+ * 
+ * @Author Mateo Rodriguez c.
+ * 17 oct. 2023 3:55:11 p. m.
+ */
 @AllArgsConstructor
 public class User implements UserDetails{
 
