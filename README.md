@@ -73,6 +73,7 @@ public interface OyentsFeignClient {
 - luego importamos la base de datos en nuestro gestor SGBD MySQL.
 
 por ultimo corremos nuestros proyectos y se veria asi: 
+![Captura de pantalla 2023-10-19 115526](https://github.com/MateoRodriguez0/spring-security-jwt/assets/107595139/ab529611-3595-44bf-9ae4-93b1fd6c8b37)
 
 
 
@@ -129,14 +130,14 @@ Si el inicio de session es exitoso deberi devolver en la respuesta el JSON Web T
         "idRol":2
     }
 ```
-## Tests in Postman
+# Tests in Postman
 
 ![Captura de pantalla 2023-10-14 082628](https://github.com/MateoRodriguez0/spring-security-jwt/assets/107595139/6ad25ec3-5be6-4467-877d-38f60a6d8519)
 
 
 
 
-## Documentation
+# Documentation
 
 - [API oyentes](https://github.com/MateoRodriguez0/api-oyentes-jwt)
 - [API Artistas](https://github.com/MateoRodriguez0/api-artistas-jwt)
