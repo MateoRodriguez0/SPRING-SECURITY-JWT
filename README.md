@@ -26,6 +26,56 @@ Para que esta applicacion pueda funcionar completamente depende de dos microserv
 - JJWT
 
 
+# Datasource and pool connection 
+``` java
+spring.datasource.url=jdbc:mysql://localhost:3306/appmusic?useSSL=false&serverTimezone=America/Bogota&AllowpublicKeyRetrieval=true
+spring.datasource.username=root
+spring.datasource.password=
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+spring.jpa.generate-ddl=false
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
+spring.jpa.hibernate.naming.physical-strategy=org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+spring.jpa.show-sql=false
+spring.jpa.open-in-view=true
+
+spring.datasource.hikari.pool-name=conexionOyentes
+spring.datasource.hikari.maximum-pool-size=30
+spring.datasource.hikari.connection-timeout=45000
+
+```
+
+# feignClients
+```Java
+@FeignClient(name = "servicio-artistas",url = "localhost:8004")
+public interface ArtistsFeignClient {
+
+    }
+
+
+@FeignClient(name = "servicio-clientes",url = "localhost:8003")
+public interface OyentsFeignClient {
+	
+    }
+```
+
+# Requeriments 
+* Java 17 o una version superior.
+* MySQL 8
+* Lombock
+
+# Instalation 
+- Primero Descargamos la version mas actual del proyecto en el siguiente [enlace](https://github.com/MateoRodriguez0/spring-security-jwt/releases/tag/VERSION-FINAL-DOCUMENTADA)
+- Descargamos el archivo [appmusic.sql](https://github.com/MateoRodriguez0/spring-security-jwt/blob/master/appmusic.sql) 
+- Descargamos la versión mas reciente de la [API ARTISTAS](https://github.com/MateoRodriguez0/api-artistas-jwt)
+- Descargamos la versión mas reciente de la [API OYENTES](https://github.com/MateoRodriguez0/api-oyentes-jwt)
+- importamos nuestros proyectos en el IDE.
+- luego importamos la base de datos en nuestro gestor SGBD MySQL.
+
+por ultimo corremos nuestros proyectos y se veria asi: 
+
+
+
 # API Reference
 
 Para Realizar una peticion se debe enviar el JWT en las cabeceras de la peticion.
@@ -37,7 +87,7 @@ Para Realizar una peticion se debe enviar el JWT en las cabeceras de la peticion
 
 
 
-## Usage/Examples
+# Usage/Examples
 
 ### Sing In
 
