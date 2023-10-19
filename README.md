@@ -73,6 +73,7 @@ public interface OyentsFeignClient {
 - luego importamos la base de datos en nuestro gestor SGBD MySQL.
 
 por ultimo corremos nuestros proyectos y se veria asi: 
+
 ![Captura de pantalla 2023-10-19 115526](https://github.com/MateoRodriguez0/spring-security-jwt/assets/107595139/ab529611-3595-44bf-9ae4-93b1fd6c8b37)
 
 
