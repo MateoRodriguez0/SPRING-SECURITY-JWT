@@ -6,6 +6,17 @@ Basado en la arquitectura de microservicios sin ningun tipo de front-end o inter
 
 Para que esta applicacion pueda funcionar completamente depende de dos microservicios, [artistas](https://github.com/MateoRodriguez0/api-artistas-jwt) y [oyentes](https://github.com/MateoRodriguez0/api-oyentes-jwt) los cuales tienen toda la logica de negocio de la aplicacion. Este proyecto esta hecho con el fin de unir completamente ambos microservicios a traves de OpenFeign y crear una app segura con inicio de sesión y registro de cuenta.
 
+### Esta app permite:
+- ✅ Registrar usuarios
+- ✅ Auth JWT
+- ✅ Buscar todos los Artistas y por id 
+- ✅ Buscar canciones por Artista 
+- ✅ Listar todas las canciones y cancion por id
+- ✅ Crud completo de canciones
+- ✅ listar, agregar y eliminar favoritas
+- ✅ Validacion de campos
+
+  
 ## Spring Security architecture diagram
 
 ![diagrama Spring Security](https://github.com/MateoRodriguez0/spring-security-jwt/assets/107595139/15187af2-b3c4-4bc4-a708-c2c1bfd0eecc)
